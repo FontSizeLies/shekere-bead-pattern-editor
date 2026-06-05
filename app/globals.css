@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 225 15% 95%;
+    --foreground: 225 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 225 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 25% 10%;
+    --primary: 18 85% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 225 12% 89%;
+    --secondary-foreground: 225 25% 10%;
+    --muted: 225 12% 91%;
+    --muted-foreground: 225 10% 44%;
+    --accent: 18 85% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 225 12% 85%;
+    --input: 225 12% 85%;
+    --ring: 18 85% 52%;
+    --chart-1: 18 85% 52%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 225 25% 10%;
+    --sidebar-primary: 18 85% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 225 12% 94%;
+    --sidebar-accent-foreground: 225 25% 10%;
+    --sidebar-border: 225 12% 85%;
+    --sidebar-ring: 18 85% 52%;
+    --panel: 225 14% 97%;
+    --panel-foreground: 225 25% 10%;
+    --canvas: 0 0% 100%;
+  }
+  .dark {
+    --background: 225 22% 7%;
+    --foreground: 225 10% 93%;
+    --card: 225 20% 11%;
+    --card-foreground: 225 10% 93%;
+    --popover: 225 20% 11%;
+    --popover-foreground: 225 10% 93%;
+    --primary: 18 85% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 225 18% 15%;
+    --secondary-foreground: 225 10% 93%;
+    --muted: 225 18% 15%;
+    --muted-foreground: 225 10% 48%;
+    --accent: 18 85% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 225 18% 18%;
+    --input: 225 18% 18%;
+    --ring: 18 85% 52%;
+    --chart-1: 18 85% 52%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 225 22% 9%;
+    --sidebar-foreground: 225 10% 93%;
+    --sidebar-primary: 18 85% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 225 18% 13%;
+    --sidebar-accent-foreground: 225 10% 93%;
+    --sidebar-border: 225 18% 18%;
+    --sidebar-ring: 18 85% 52%;
+    --panel: 225 22% 9%;
+    --panel-foreground: 225 10% 93%;
+    --canvas: 225 20% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar for panels */
+.panel-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.panel-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.panel-scroll::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+.panel-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Safe area padding for notched devices */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
